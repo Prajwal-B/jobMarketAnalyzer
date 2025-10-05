@@ -1,0 +1,258 @@
+# file: config/config.yaml
+# Central configuration for Job Market Analyzer
+
+# Project metadata
+project:
+  name: "Job Market Analyzer"
+  version: "1.0.0"
+  description: "India Job Market Analysis and Skill Extraction Pipeline"
+  date_range:
+    start: "2024-01-01"
+    end: "2025-06-30"
+
+# Data collection settings
+data_collection:
+  sample_mode: true
+  sample_size: 30
+  kaggle:
+    enabled: false
+    path: "~/datasets/jobs.csv"
+    chunksize: 10000
+  scraping:
+    enabled: false
+    max_pages: 5
+    rate_limit_seconds: 3
+    timeout_seconds: 10
+    user_agent: "JobAnalyzer/1.0 (Educational Research)"
+
+# Preprocessing settings
+preprocessing:
+  remove_duplicates: true
+  duplicate_check_columns:
+    - title
+    - company
+    - location
+    - posted_date
+  date_formats:
+    - "%Y-%m-%d"
+    - "%d-%m-%Y"
+    - "%m/%d/%Y"
+    - "%d/%m/%Y"
+  experience_range:
+    min: 0
+    max: 50
+  salary:
+    min_threshold: 100000
+    max_threshold: 10000000
+
+# Skill extraction settings
+skill_extraction:
+  lexicon_path: "skills/skills_lexicon.csv"
+  use_embeddings: false
+  embedding_model: "all-MiniLM-L6-v2"
+  similarity_threshold: 0.78
+  batch_size: 32
+  top_n_skills_for_boolean_columns: 50
+  spacy_model: "en_core_web_sm"
+
+# Co-occurrence analysis settings
+cooccurrence:
+  min_support: 0.02
+  min_confidence: 0.3
+  top_n_associations: 100
+  network_format: "graphml"
+  clustering:
+    enabled: true
+    algorithm: "greedy_modularity"
+
+# Trend analysis settings
+trend_analysis:
+  frequency: "monthly"  # monthly or quarterly
+  anomaly_detection:
+    enabled: true
+    z_score_threshold: 2.0
+  emerging_skills:
+    min_growth_rate: 0.2
+    min_total_mentions: 5
+  declining_skills:
+    max_growth_rate: -0.2
+    min_total_mentions: 5
+  top_n_trends: 20
+
+# Geographic analysis settings
+geography:
+  tier_1_cities:
+    - Bangalore
+    - Mumbai
+    - Delhi
+    - Hyderabad
+    - Chennai
+    - Kolkata
+    - Pune
+    - Ahmedabad
+  tier_2_cities:
+    - Jaipur
+    - Surat
+    - Lucknow
+    - Kanpur
+    - Nagpur
+    - Indore
+    - Thane
+    - Bhopal
+    - Visakhapatnam
+    - Patna
+    - Vadodara
+    - Ghaziabad
+    - Ludhiana
+    - Coimbatore
+    - Kochi
+    - Gurgaon
+    - Noida
+    - Chandigarh
+  regions:
+    North:
+      - Delhi
+      - Gurgaon
+      - Noida
+      - Ghaziabad
+      - Chandigarh
+      - Lucknow
+      - Kanpur
+      - Jaipur
+      - Ludhiana
+    South:
+      - Bangalore
+      - Hyderabad
+      - Chennai
+      - Kochi
+      - Coimbatore
+      - Visakhapatnam
+    West:
+      - Mumbai
+      - Pune
+      - Ahmedabad
+      - Surat
+      - Thane
+      - Vadodara
+    East:
+      - Kolkata
+      - Patna
+    Central:
+      - Bhopal
+      - Nagpur
+      - Indore
+  export_regional_subsets: true
+
+# NER training settings (optional)
+ner:
+  enabled: false
+  train_path: "ner/corpus/train.spacy"
+  dev_path: "ner/corpus/dev.spacy"
+  test_path: "ner/corpus/test.spacy"
+  output_dir: "models/skill_ner"
+  epochs: 30
+  batch_size: 8
+  dropout: 0.2
+  patience: 5
+
+# Tableau export settings
+tableau:
+  enabled: true
+  output_dir: "exports/tableau_ready"
+  include_boolean_columns: true
+  date_format: "%Y-%m-%d"
+  skill_columns_prefix: "has_"
+
+# Output paths
+paths:
+  data:
+    raw: "data/raw_jobs.csv"
+    cleaned: "data/cleaned_jobs.csv"
+    with_skills: "data/jobs_with_skills.csv"
+  exports:
+    cooccurrence: "exports/cooccurrence.csv"
+    cooccurrence_associations: "exports/cooccurrence_associations.csv"
+    network: "exports/skill_network.graphml"
+    network_metrics: "exports/network_metrics.csv"
+    clusters: "exports/skill_clusters.csv"
+    trends: "exports/trends.csv"
+    trends_growth: "exports/trends_growth.csv"
+    trends_emerging: "exports/trends_emerging.csv"
+    trends_declining: "exports/trends_declining.csv"
+    trends_anomalies: "exports/trends_anomalies.csv"
+    geo_location_stats: "exports/by_region/location_statistics.csv"
+    geo_tier_stats: "exports/by_region/tier_statistics.csv"
+    geo_region_stats: "exports/by_region/region_statistics.csv"
+    geo_skills_by_location: "exports/by_region/skills_by_location.csv"
+  tableau:
+    main: "exports/tableau_ready/jobs_tableau.csv"
+    geographic: "exports/tableau_ready/jobs_geographic.csv"
+  logs:
+    dir: "logs"
+    data_collection: "logs/data_collection.log"
+    preprocess: "logs/preprocess.log"
+    skill_extraction: "logs/skill_extraction.log"
+    cooccurrence: "logs/cooccurrence.log"
+    trends: "logs/trends.log"
+    geography: "logs/geography.log"
+
+# Logging settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file_logging: true
+  console_logging: true
+
+# Performance settings
+performance:
+  use_multiprocessing: false
+  n_workers: 4
+  chunk_size: 1000
+  memory_limit_mb: 4096
+
+# Testing settings
+testing:
+  enabled: true
+  test_data_size: 50
+  random_seed: 42
+  coverage_threshold: 70
+
+# Feature flags
+features:
+  embedding_extraction: false
+  ner_training: false
+  network_visualization: true
+  anomaly_detection: true
+  clustering: true
+  regional_exports: true
+  tableau_exports: true
+
+# Validation rules
+validation:
+  required_columns:
+    - title
+    - description
+  min_rows: 10
+  max_null_percentage: 0.5
+
+# Rate limiting (for future API integrations)
+rate_limiting:
+  enabled: true
+  requests_per_minute: 60
+  burst_size: 10
+
+# Email notifications (optional, not implemented)
+notifications:
+  enabled: false
+  email: "alerts@example.com"
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  on_error: true
+  on_completion: false
+
+# Monitoring (for production deployments)
+monitoring:
+  enabled: false
+  metrics_port: 9090
+  health_check_endpoint: "/health"

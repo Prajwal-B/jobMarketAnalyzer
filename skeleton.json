@@ -1,0 +1,166 @@
+{
+  "project": "Job Market Analyzer & Skill Extractor",
+  "version": "1.0.0",
+  "description": "Complete modular codebase for India job market analysis (Jan 2024 - Jun 2025)",
+  "files": [
+    {
+      "order": 1,
+      "path": "skeleton.json",
+      "description": "This manifest file"
+    },
+    {
+      "order": 2,
+      "path": "README.md",
+      "description": "Project overview, setup, and usage instructions"
+    },
+    {
+      "order": 3,
+      "path": "requirements.txt",
+      "description": "Python dependencies with pinned versions"
+    },
+    {
+      "order": 4,
+      "path": "Makefile",
+      "description": "Build automation and pipeline orchestration"
+    },
+    {
+      "order": 5,
+      "path": "run_all.sh",
+      "description": "End-to-end pipeline execution script (Unix)"
+    },
+    {
+      "order": 6,
+      "path": "run_all.bat",
+      "description": "End-to-end pipeline execution script (Windows)"
+    },
+    {
+      "order": 7,
+      "path": "data/sample_jobs.csv",
+      "description": "Synthetic sample dataset (30 rows) for demo"
+    },
+    {
+      "order": 8,
+      "path": "scripts/data_collection.py",
+      "description": "Data ingestion: Kaggle CSV loader + scraping template"
+    },
+    {
+      "order": 9,
+      "path": "scripts/preprocess.py",
+      "description": "Data normalization, deduplication, date parsing"
+    },
+    {
+      "order": 10,
+      "path": "skills/skills_lexicon.csv",
+      "description": "Curated technical and soft skills lexicon"
+    },
+    {
+      "order": 11,
+      "path": "scripts/skill_extractor.py",
+      "description": "Hybrid skill extraction: PhraseMatcher + embedding fallback"
+    },
+    {
+      "order": 12,
+      "path": "ner/README.md",
+      "description": "NER fine-tuning documentation and approach"
+    },
+    {
+      "order": 13,
+      "path": "ner/train_ner.py",
+      "description": "Optional NER training skeleton with mock mode"
+    },
+    {
+      "order": 14,
+      "path": "scripts/skill_cooccurrence.py",
+      "description": "Co-occurrence matrix and network graph generation"
+    },
+    {
+      "order": 15,
+      "path": "scripts/trend_analysis.py",
+      "description": "Time series analysis and anomaly detection"
+    },
+    {
+      "order": 16,
+      "path": "scripts/geography_analysis.py",
+      "description": "Regional mapping (Tier-1/Tier-2) and per-region exports"
+    },
+    {
+      "order": 17,
+      "path": "notebooks/analysis_demo.ipynb",
+      "description": "Interactive analysis and visualization demo"
+    },
+    {
+      "order": 18,
+      "path": "exports/tableau_ready/README.md",
+      "description": "Tableau import instructions"
+    },
+    {
+      "order": 19,
+      "path": "exports/tableau_ready/sample_export.csv",
+      "description": "Sample Tableau-ready export format"
+    },
+    {
+      "order": 20,
+      "path": "tests/test_skill_extractor.py",
+      "description": "Unit tests for skill extraction pipeline"
+    },
+    {
+      "order": 21,
+      "path": "tests/test_preprocess.py",
+      "description": "Unit tests for preprocessing logic"
+    },
+    {
+      "order": 22,
+      "path": "tests/conftest.py",
+      "description": "Pytest fixtures and configuration"
+    },
+    {
+      "order": 23,
+      "path": "Dockerfile",
+      "description": "Containerized reproducible environment"
+    },
+    {
+      "order": 24,
+      "path": ".dockerignore",
+      "description": "Docker build exclusions"
+    },
+    {
+      "order": 25,
+      "path": "docs/LICENSE",
+      "description": "Project license (MIT)"
+    },
+    {
+      "order": 26,
+      "path": "docs/EXPLAIN.txt",
+      "description": "Ethics, scraping guidelines, and usage notes"
+    },
+    {
+      "order": 27,
+      "path": ".gitignore",
+      "description": "Git exclusions"
+    },
+    {
+      "order": 28,
+      "path": "config/config.yaml",
+      "description": "Centralized configuration parameters"
+    },
+    {
+      "order": 29,
+      "path": "scripts/utils.py",
+      "description": "Shared utility functions"
+    },
+    {
+      "order": 30,
+      "path": "archive_manifest.json",
+      "description": "Final file inventory with SHA256 checksums"
+    }
+  ],
+  "total_files": 30,
+  "execution_order": [
+    "scripts/data_collection.py --use-sample",
+    "scripts/preprocess.py",
+    "scripts/skill_extractor.py",
+    "scripts/skill_cooccurrence.py",
+    "scripts/trend_analysis.py",
+    "scripts/geography_analysis.py"
+  ]
+}

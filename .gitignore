@@ -1,0 +1,216 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+coverage.xml
+*.cover
+.cache
+nosetests.xml
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+!notebooks/analysis_demo.ipynb
+
+# Logs
+*.log
+logs/*.log
+*.log.*
+
+# Data files (keep samples only)
+data/*.csv
+!data/sample_jobs.csv
+data/raw_jobs.csv
+data/cleaned_jobs.csv
+data/jobs_with_skills.csv
+data/*.json
+data/*.parquet
+
+# Exports
+exports/*.csv
+exports/*.graphml
+exports/*.gexf
+exports/by_region/*.csv
+exports/tableau_ready/*.csv
+!exports/tableau_ready/README.md
+!exports/tableau_ready/sample_export.csv
+
+# Models and Trained Files
+models/
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+*.onnx
+ner/corpus/
+ner/models/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+secrets.yaml
+config/secrets.yaml
+*.key
+*.pem
+*.crt
+
+# Operating System
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.directory
+.Trash-*
+
+# Documentation (except README)
+docs/*.pdf
+docs/*.docx
+docs/*.doc
+!docs/LICENSE
+!docs/EXPLAIN.txt
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Profiling
+*.prof
+*.lprof
+
+# Large files
+*.csv.gz
+*.parquet
+*.feather
+
+# Scrapy
+.scrapy/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs
+/site
+
+# Backup files
+*.backup
+*_backup
+
+# Cache directories
+.cache/
+*.cache
+
+# Node modules (if any JS tools used)
+node_modules/
+
+# Docker volumes
+docker-volumes/
+
+# Generated files from pipeline
+skill_network.*
+cooccurrence.*
+trends.*
+*_statistics.csv
+*_growth.csv
+*_emerging.csv
+*_declining.csv
+*_anomalies.csv
+network_metrics.csv
+skill_clusters.csv
+
+# Checksum files (except final manifest)
+*.sha256
+!archive_manifest.json

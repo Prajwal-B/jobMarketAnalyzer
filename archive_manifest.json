@@ -1,0 +1,317 @@
+{
+  "project": "Job Market Analyzer & Skill Extractor",
+  "version": "1.0.0",
+  "generated_at": "2024-10-03T00:00:00Z",
+  "description": "Complete modular codebase for India job market analysis (Jan 2024 - Jun 2025)",
+  "files": [
+    {
+      "path": "skeleton.json",
+      "type": "manifest",
+      "description": "Project file structure and execution order",
+      "sha256": "PLACEHOLDER_HASH_1",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "README.md",
+      "type": "documentation",
+      "description": "Project overview, setup, and usage instructions",
+      "sha256": "PLACEHOLDER_HASH_2",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "requirements.txt",
+      "type": "dependencies",
+      "description": "Python dependencies with pinned versions",
+      "sha256": "PLACEHOLDER_HASH_3",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "Makefile",
+      "type": "build",
+      "description": "Build automation and pipeline orchestration",
+      "sha256": "PLACEHOLDER_HASH_4",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "run_all.sh",
+      "type": "script",
+      "description": "End-to-end pipeline execution script (Unix)",
+      "sha256": "PLACEHOLDER_HASH_5",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "run_all.bat",
+      "type": "script",
+      "description": "End-to-end pipeline execution script (Windows)",
+      "sha256": "PLACEHOLDER_HASH_6",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "data/sample_jobs.csv",
+      "type": "data",
+      "description": "Synthetic sample dataset (30 rows) for demo",
+      "sha256": "PLACEHOLDER_HASH_7",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "scripts/data_collection.py",
+      "type": "python",
+      "description": "Data ingestion: Kaggle CSV loader + scraping template",
+      "sha256": "PLACEHOLDER_HASH_8",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "scripts/preprocess.py",
+      "type": "python",
+      "description": "Data normalization, deduplication, date parsing",
+      "sha256": "PLACEHOLDER_HASH_9",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "skills/skills_lexicon.csv",
+      "type": "data",
+      "description": "Curated technical and soft skills lexicon",
+      "sha256": "PLACEHOLDER_HASH_10",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "scripts/skill_extractor.py",
+      "type": "python",
+      "description": "Hybrid skill extraction: PhraseMatcher + embedding fallback",
+      "sha256": "PLACEHOLDER_HASH_11",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "ner/README.md",
+      "type": "documentation",
+      "description": "NER fine-tuning documentation and approach",
+      "sha256": "PLACEHOLDER_HASH_12",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "ner/train_ner.py",
+      "type": "python",
+      "description": "Optional NER training skeleton with mock mode",
+      "sha256": "PLACEHOLDER_HASH_13",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "scripts/skill_cooccurrence.py",
+      "type": "python",
+      "description": "Co-occurrence matrix and network graph generation",
+      "sha256": "PLACEHOLDER_HASH_14",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "scripts/trend_analysis.py",
+      "type": "python",
+      "description": "Time series analysis and anomaly detection",
+      "sha256": "PLACEHOLDER_HASH_15",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "scripts/geography_analysis.py",
+      "type": "python",
+      "description": "Regional mapping (Tier-1/Tier-2) and per-region exports",
+      "sha256": "PLACEHOLDER_HASH_16",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "notebooks/analysis_demo.ipynb",
+      "type": "notebook",
+      "description": "Interactive analysis and visualization demo",
+      "sha256": "PLACEHOLDER_HASH_17",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "exports/tableau_ready/README.md",
+      "type": "documentation",
+      "description": "Tableau import instructions",
+      "sha256": "PLACEHOLDER_HASH_18",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "exports/tableau_ready/sample_export.csv",
+      "type": "data",
+      "description": "Sample Tableau-ready export format",
+      "sha256": "PLACEHOLDER_HASH_19",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "tests/test_skill_extractor.py",
+      "type": "python",
+      "description": "Unit tests for skill extraction pipeline",
+      "sha256": "PLACEHOLDER_HASH_20",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "tests/test_preprocess.py",
+      "type": "python",
+      "description": "Unit tests for preprocessing logic",
+      "sha256": "PLACEHOLDER_HASH_21",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "tests/conftest.py",
+      "type": "python",
+      "description": "Pytest fixtures and configuration",
+      "sha256": "PLACEHOLDER_HASH_22",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "Dockerfile",
+      "type": "docker",
+      "description": "Containerized reproducible environment",
+      "sha256": "PLACEHOLDER_HASH_23",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": ".dockerignore",
+      "type": "docker",
+      "description": "Docker build exclusions",
+      "sha256": "PLACEHOLDER_HASH_24",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "docs/LICENSE",
+      "type": "legal",
+      "description": "Project license (MIT)",
+      "sha256": "PLACEHOLDER_HASH_25",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "docs/EXPLAIN.txt",
+      "type": "documentation",
+      "description": "Ethics, scraping guidelines, and usage notes",
+      "sha256": "PLACEHOLDER_HASH_26",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": ".gitignore",
+      "type": "git",
+      "description": "Git exclusions",
+      "sha256": "PLACEHOLDER_HASH_27",
+      "size_bytes": 0,
+      "critical": false
+    },
+    {
+      "path": "config/config.yaml",
+      "type": "configuration",
+      "description": "Centralized configuration parameters",
+      "sha256": "PLACEHOLDER_HASH_28",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "scripts/utils.py",
+      "type": "python",
+      "description": "Shared utility functions",
+      "sha256": "PLACEHOLDER_HASH_29",
+      "size_bytes": 0,
+      "critical": true
+    },
+    {
+      "path": "archive_manifest.json",
+      "type": "manifest",
+      "description": "Final file inventory with SHA256 checksums",
+      "sha256": "SELF_REFERENCE",
+      "size_bytes": 0,
+      "critical": true
+    }
+  ],
+  "total_files": 30,
+  "execution_order": [
+    "scripts/data_collection.py --use-sample",
+    "scripts/preprocess.py",
+    "scripts/skill_extractor.py",
+    "scripts/skill_cooccurrence.py",
+    "scripts/trend_analysis.py",
+    "scripts/geography_analysis.py"
+  ],
+  "quick_start": {
+    "setup": [
+      "python3 -m venv venv",
+      "source venv/bin/activate",
+      "pip install -r requirements.txt",
+      "python -m spacy download en_core_web_sm"
+    ],
+    "run": [
+      "bash run_all.sh",
+      "OR",
+      "make run"
+    ],
+    "test": [
+      "pytest tests/ -v"
+    ]
+  },
+  "system_requirements": {
+    "python_version": "3.10+",
+    "memory_recommended": "4GB+",
+    "disk_space": "~500MB",
+    "operating_systems": [
+      "Linux",
+      "macOS",
+      "Windows 10+"
+    ]
+  },
+  "verification": {
+    "instructions": "To verify integrity, compute SHA256 hashes of all files and compare with this manifest",
+    "note": "PLACEHOLDER_HASH values should be replaced with actual checksums after file generation",
+    "command": "sha256sum <filename>"
+  },
+  "notes": [
+    "All Python scripts include CLI interfaces with --help flags",
+    "Sample data is included; replace with real data for production",
+    "Embedding-based extraction is optional and disabled by default for performance",
+    "NER training module is optional and requires annotated data",
+    "Docker support included for reproducibility",
+    "All code is tested with pytest (see tests/ directory)",
+    "Configuration is centralized in config/config.yaml",
+    "Detailed ethics and legal guidelines in docs/EXPLAIN.txt"
+  ],
+  "deliverables_status": {
+    "data_collection": "✓ Complete",
+    "preprocessing": "✓ Complete",
+    "skill_extraction": "✓ Complete (PhraseMatcher + optional embeddings)",
+    "co_occurrence_analysis": "✓ Complete",
+    "trend_analysis": "✓ Complete",
+    "geographic_analysis": "✓ Complete",
+    "network_graphs": "✓ Complete",
+    "tableau_exports": "✓ Complete",
+    "tests": "✓ Complete",
+    "documentation": "✓ Complete",
+    "docker": "✓ Complete",
+    "ner_training": "✓ Complete (optional skeleton)"
+  },
+  "contact": {
+    "project": "Job Market Analyzer & Skill Extractor",
+    "purpose": "Portfolio/Educational Project",
+    "license": "MIT"
+  }
+}
