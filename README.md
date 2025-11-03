@@ -1,8 +1,6 @@
-# file: README.md
-
 # Job Market Analyzer & Skill Extractor
 
-**Complete modular pipeline for analyzing India's job market (Jan 2024 — Jun 2025)**
+**Complete modular pipeline for analyzing India's job market**
 
 ## Overview
 
@@ -23,12 +21,6 @@ This project provides an end-to-end data engineering and NLP pipeline to:
 - **Optional NER Training**: Skeleton for fine-tuning custom skill recognizers
 - **Fully Local**: No external API keys required
 - **Docker Support**: Reproducible containerized environment
-
-## Requirements
-
-- Python 3.10+
-- 4GB+ RAM recommended
-- ~500MB disk space for models and data
 
 ## Quick Start
 
